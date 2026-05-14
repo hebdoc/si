@@ -1,0 +1,189 @@
+/* Auto Verify - Content Script 注入样式 */
+
+:root {
+  /* Default to M3 Light Theme Colors (subset for content) */
+  --md-sys-color-primary: #6750A4;
+  --md-sys-color-on-primary: #FFFFFF;
+  --md-sys-color-primary-container: #EADDFF;
+  --md-sys-color-on-primary-container: #21005D;
+  
+  --md-sys-color-surface: #FEFBFF;
+  --md-sys-color-on-surface: #1B1B1F;
+  --md-sys-color-surface-container: #F3EDF7;
+
+  /* State Layers */
+  --md-sys-state-hover: 0.08;
+  --md-sys-state-pressed: 0.12;
+
+  /* Elevation (Shadows) */
+  --md-sys-elevation-level1: 0 1px 2px 0 rgba(0,0,0,0.3), 0 1px 3px 1px rgba(0,0,0,0.15);
+  --md-sys-elevation-level2: 0 1px 2px 0 rgba(0,0,0,0.3), 0 2px 6px 2px rgba(0,0,0,0.15);
+  
+  /* Shapes */
+  --md-sys-shape-corner-small: 8px;
+  --md-sys-shape-corner-medium: 12px;
+  --md-sys-shape-corner-full: 9999px;
+
+  /* Typography */
+  --md-sys-typescale-label-large-size: 14px;
+  --md-sys-typescale-label-large-weight: 500;
+  
+  --transition: 0.2s cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* Dark Theme Colors */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --md-sys-color-primary: #D0BCFF;
+    --md-sys-color-on-primary: #381E72;
+    --md-sys-color-primary-container: #4F378B;
+    --md-sys-color-on-primary-container: #EADDFF;
+    
+    --md-sys-color-surface: #1C1B1F;
+    --md-sys-color-on-surface: #E6E1E5;
+    --md-sys-color-surface-container: #211F26;
+  }
+}
+
+[data-theme="dark"] {
+  --md-sys-color-primary: #D0BCFF;
+  --md-sys-color-on-primary: #381E72;
+  --md-sys-color-primary-container: #4F378B;
+  --md-sys-color-on-primary-container: #EADDFF;
+  
+  --md-sys-color-surface: #1C1B1F;
+  --md-sys-color-on-surface: #E6E1E5;
+  --md-sys-color-surface-container: #211F26;
+}
+
+/* 验证码高亮边框 */
+.av-highlight {
+  position: absolute;
+  inset: -2px; /* 稍微向外扩展，不遮挡原图边缘 */
+  border: 2px solid var(--md-sys-color-primary);
+  border-radius: var(--md-sys-shape-corner-medium);
+  box-shadow: 0 0 12px rgba(208, 188, 255, 0.3); /* Based on Primary color */
+  animation: av-fade-in 0.4s cubic-bezier(0.2, 0, 0, 1) forwards;
+  pointer-events: none;
+  opacity: 0;
+}
+
+@keyframes av-fade-in {
+  0% { 
+    opacity: 0; 
+    transform: scale(0.95);
+    box-shadow: 0 0 4px rgba(208, 188, 255, 0.1); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: scale(1);
+    box-shadow: 0 0 12px rgba(208, 188, 255, 0.5); 
+  }
+}
+
+/* 识别按钮 */
+.av-recognize-btn {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  height: 32px;
+  padding: 0 16px;
+  font-size: var(--md-sys-typescale-label-large-size);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--md-sys-color-on-primary-container);
+  background: var(--md-sys-color-primary-container);
+  border: none;
+  border-radius: var(--md-sys-shape-corner-full);
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: var(--md-sys-elevation-level1);
+  transition: background-color var(--transition), box-shadow var(--transition);
+  z-index: 2147483647;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none; /* explicitly disable pointer-events to not steal hovers when hidden */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.av-recognize-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: currentColor;
+  opacity: 0;
+  transition: opacity var(--transition);
+  pointer-events: none;
+}
+
+.av-overlay-wrapper.av-hover .av-recognize-btn,
+.av-recognize-btn.av-success,
+.av-recognize-btn.av-error {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto; /* re-enable to allow clicks */
+}
+
+.av-recognize-btn:hover {
+  box-shadow: var(--md-sys-elevation-level2);
+}
+
+.av-recognize-btn:hover::after {
+  opacity: var(--md-sys-state-hover);
+}
+
+.av-recognize-btn:active::after {
+  opacity: var(--md-sys-state-pressed);
+}
+
+.av-recognize-btn.av-success {
+  background: #10b981; /* Keep semantic green but match M3 tone */
+  color: #fff;
+}
+
+.av-recognize-btn.av-error {
+  background: #ef4444; /* Keep semantic red */
+  color: #fff;
+}
+
+
+
+/* Toast 提示 */
+.av-toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  padding: 14px 24px;
+  font-size: var(--md-sys-typescale-label-large-size);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--md-sys-color-on-surface);
+  border-radius: var(--md-sys-shape-corner-medium);
+  box-shadow: var(--md-sys-elevation-level3);
+  z-index: 2147483647;
+  transform: translateX(120%);
+  transition: transform var(--transition);
+  max-width: 360px;
+  word-break: break-word;
+}
+
+.av-toast-show {
+  transform: translateX(0);
+}
+
+.av-toast-success {
+  background: #10b981;
+  color: #fff;
+}
+
+.av-toast-error {
+  background: #ef4444;
+  color: #fff;
+}
+
+.av-toast-info {
+  background: var(--md-sys-color-surface-container);
+}
