@@ -1,0 +1,177 @@
+{
+   "blacklistTitle": {
+      "message": "黑名单"
+   },
+   "blacklistToggleLabel": {
+      "message": "在此网站自动检测"
+   },
+   "btnAdd": {
+      "message": "添加域名"
+   },
+   "btnCancel": {
+      "message": "取消"
+   },
+   "btnClearHistory": {
+      "message": "清空"
+   },
+   "btnCopied": {
+      "message": "已复制"
+   },
+   "btnCopy": {
+      "message": "复制"
+   },
+   "btnEdit": {
+      "message": "修改"
+   },
+   "btnFailed": {
+      "message": "失败"
+   },
+   "btnRecognizeLabel": {
+      "message": "识别"
+   },
+   "btnRecognizePage": {
+      "message": "识别当前页面"
+   },
+   "btnRecognizing": {
+      "message": "识别中..."
+   },
+   "btnRemove": {
+      "message": "移除"
+   },
+   "btnSave": {
+      "message": "保存"
+   },
+   "caseLabel": {
+      "message": "输出大小写"
+   },
+   "caseLowercase": {
+      "message": "全部小写"
+   },
+   "caseOriginal": {
+      "message": "保持原样"
+   },
+   "caseUppercase": {
+      "message": "全部大写"
+   },
+   "confidenceLabel": {
+      "message": "置信度 $PERCENT$%",
+      "placeholders": {
+         "percent": {
+            "content": "$1"
+         }
+      }
+   },
+   "copyResult": {
+      "message": "复制结果"
+   },
+   "emptyHistory": {
+      "message": "暂无识别记录"
+   },
+   "extDescription": {
+      "message": "自动检测并识别页面中的文本型验证码，支持数字、字母、汉字识别"
+   },
+   "extName": {
+      "message": "CaptchaX - 验证码自动识别"
+   },
+   "footerSlogan": {
+      "message": "本地 OCR，隐私无忧"
+   },
+   "historyTitle": {
+      "message": "识别历史"
+   },
+   "langChiOption": {
+      "message": "简体中文"
+   },
+   "langEngOption": {
+      "message": "English (字母+数字)"
+   },
+   "langLabel": {
+      "message": "识别语言"
+   },
+   "langMixedOption": {
+      "message": "中英混合"
+   },
+   "optionsAddPlaceholder": {
+      "message": "例如：example.com"
+   },
+   "optionsBlacklistDesc": {
+      "message": "在以下网站中已禁用自动检测："
+   },
+   "optionsBlacklistEmpty": {
+      "message": "黑名单为空"
+   },
+   "optionsTitle": {
+      "message": "CaptchaX 设置"
+   },
+   "pageUnsupported": {
+      "message": "当前页面不支持识别"
+   },
+   "recognizing": {
+      "message": "正在识别..."
+   },
+   "recognizingPercent": {
+      "message": "正在识别... $PERCENT$%",
+      "placeholders": {
+         "percent": {
+            "content": "$1"
+         }
+      }
+   },
+   "resultEmpty": {
+      "message": "（空）"
+   },
+   "resultLabel": {
+      "message": "识别结果"
+   },
+   "resultUnreliable": {
+      "message": "识别结果不可靠（过短）"
+   },
+   "subtitle": {
+      "message": "验证码自动识别"
+   },
+   "themeDark": {
+      "message": "深色主题"
+   },
+   "themeLabel": {
+      "message": "主题"
+   },
+   "themeLight": {
+      "message": "浅色主题"
+   },
+   "themeSystem": {
+      "message": "跟随系统"
+   },
+   "toastFailed": {
+      "message": "识别失败: $ERROR$",
+      "placeholders": {
+         "error": {
+            "content": "$1"
+         }
+      }
+   },
+   "toastNoCaptcha": {
+      "message": "未检测到验证码"
+   },
+   "toastNoInput": {
+      "message": "识别结果: $TEXT$（未找到输入框）",
+      "placeholders": {
+         "text": {
+            "content": "$1"
+         }
+      }
+   },
+   "toastSuccess": {
+      "message": "识别成功: $TEXT$",
+      "placeholders": {
+         "text": {
+            "content": "$1"
+         }
+      }
+   },
+   "uploadDivider": {
+      "message": "或手动上传"
+   },
+   "uploadHint": {
+      "message": "点击或拖拽上传验证码图片"
+   }
+}

@@ -1,0 +1,177 @@
+{
+   "blacklistTitle": {
+      "message": "Blacklist"
+   },
+   "blacklistToggleLabel": {
+      "message": "Auto-detect on this site"
+   },
+   "btnAdd": {
+      "message": "Add Domain"
+   },
+   "btnCancel": {
+      "message": "Cancel"
+   },
+   "btnClearHistory": {
+      "message": "Clear"
+   },
+   "btnCopied": {
+      "message": "Copied"
+   },
+   "btnCopy": {
+      "message": "Copy"
+   },
+   "btnEdit": {
+      "message": "Edit"
+   },
+   "btnFailed": {
+      "message": "Failed"
+   },
+   "btnRecognizeLabel": {
+      "message": "Recognize"
+   },
+   "btnRecognizePage": {
+      "message": "Recognize Current Page"
+   },
+   "btnRecognizing": {
+      "message": "Recognizing..."
+   },
+   "btnRemove": {
+      "message": "Remove"
+   },
+   "btnSave": {
+      "message": "Save"
+   },
+   "caseLabel": {
+      "message": "Output Case"
+   },
+   "caseLowercase": {
+      "message": "All Lowercase"
+   },
+   "caseOriginal": {
+      "message": "Original"
+   },
+   "caseUppercase": {
+      "message": "All Uppercase"
+   },
+   "confidenceLabel": {
+      "message": "Confidence $PERCENT$%",
+      "placeholders": {
+         "percent": {
+            "content": "$1"
+         }
+      }
+   },
+   "copyResult": {
+      "message": "Copy Result"
+   },
+   "emptyHistory": {
+      "message": "No records yet"
+   },
+   "extDescription": {
+      "message": "Automatically detect and recognize text-based captchas on web pages. Supports digits, letters and Chinese characters."
+   },
+   "extName": {
+      "message": "CaptchaX - Auto CAPTCHA Recognition"
+   },
+   "footerSlogan": {
+      "message": "Local OCR, privacy guaranteed"
+   },
+   "historyTitle": {
+      "message": "History"
+   },
+   "langChiOption": {
+      "message": "Simplified Chinese"
+   },
+   "langEngOption": {
+      "message": "English (letters + digits)"
+   },
+   "langLabel": {
+      "message": "Recognition Language"
+   },
+   "langMixedOption": {
+      "message": "Chinese + English Mixed"
+   },
+   "optionsAddPlaceholder": {
+      "message": "e.g., example.com"
+   },
+   "optionsBlacklistDesc": {
+      "message": "Auto-detection is disabled on the following domains:"
+   },
+   "optionsBlacklistEmpty": {
+      "message": "No sites in blacklist."
+   },
+   "optionsTitle": {
+      "message": "CaptchaX Settings"
+   },
+   "pageUnsupported": {
+      "message": "Unsupported page"
+   },
+   "recognizing": {
+      "message": "Recognizing..."
+   },
+   "recognizingPercent": {
+      "message": "Recognizing... $PERCENT$%",
+      "placeholders": {
+         "percent": {
+            "content": "$1"
+         }
+      }
+   },
+   "resultEmpty": {
+      "message": "(empty)"
+   },
+   "resultLabel": {
+      "message": "Result"
+   },
+   "resultUnreliable": {
+      "message": "Result unreliable (too short)"
+   },
+   "subtitle": {
+      "message": "Auto CAPTCHA Recognition"
+   },
+   "themeDark": {
+      "message": "Dark Theme"
+   },
+   "themeLabel": {
+      "message": "Theme"
+   },
+   "themeLight": {
+      "message": "Light Theme"
+   },
+   "themeSystem": {
+      "message": "System Settings"
+   },
+   "toastFailed": {
+      "message": "Failed: $ERROR$",
+      "placeholders": {
+         "error": {
+            "content": "$1"
+         }
+      }
+   },
+   "toastNoCaptcha": {
+      "message": "No captcha detected"
+   },
+   "toastNoInput": {
+      "message": "Result: $TEXT$ (no input field found)",
+      "placeholders": {
+         "text": {
+            "content": "$1"
+         }
+      }
+   },
+   "toastSuccess": {
+      "message": "Recognized: $TEXT$",
+      "placeholders": {
+         "text": {
+            "content": "$1"
+         }
+      }
+   },
+   "uploadDivider": {
+      "message": "or upload manually"
+   },
+   "uploadHint": {
+      "message": "Click or drag to upload a captcha image"
+   }
+}

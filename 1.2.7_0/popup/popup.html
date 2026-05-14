@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CaptchaX</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12,22C6.477,22,2,17.523,2,12S6.477,2,12,2s10,4.477,10,10S17.523,22,12,22z M12,4c-4.411,0-8,3.589-8,8s3.589,8,8,8 s8-3.589,8-8S16.411,4,12,4z"/>
+          <path d="M10.59,16.41L6.17,12l1.42-1.42l3,3l7-7l1.41,1.41L10.59,16.41z"/>
+        </svg>
+      </div>
+      <div class="header-text">
+        <h1>CaptchaX</h1>
+        <p class="subtitle" data-i18n="subtitle"></p>
+      </div>
+    </header>
+
+    <!-- Main Actions -->
+    <section class="actions">
+      <button id="btn-scan" class="btn btn-primary">
+        <span class="btn-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 7V5a2 2 0 0 1 2-2h2"></path>
+            <path d="M17 3h2a2 2 0 0 1 2 2v2"></path>
+            <path d="M21 17v2a2 2 0 0 1-2 2h-2"></path>
+            <path d="M7 21H5a2 2 0 0 1-2-2v-2"></path>
+            <line x1="7" y1="12" x2="17" y2="12"></line>
+          </svg>
+        </span>
+        <span class="btn-text" data-i18n="btnRecognizePage"></span>
+      </button>
+    </section>
+
+
+
+    <!-- Result -->
+    <div id="result-section" class="result-section hidden">
+      <div class="result-card">
+        <div class="result-label" data-i18n="resultLabel"></div>
+        <div id="result-text" class="result-text"></div>
+        <div class="result-meta">
+          <span id="result-confidence" class="confidence-badge"></span>
+          <button id="btn-copy" class="btn-small btn-ghost" data-i18n="btnCopy"></button>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- Settings -->
+    <section class="settings-section">
+      <label class="setting-item">
+        <span class="setting-label" data-i18n="langLabel"></span>
+        <select id="lang-select" class="select">
+          <option value="eng" data-i18n="langEngOption"></option>
+          <option value="chi_sim" data-i18n="langChiOption"></option>
+          <option value="eng+chi_sim" data-i18n="langMixedOption"></option>
+        </select>
+      </label>
+
+      <!-- Theme Selector -->
+      <label class="setting-item">
+        <span class="setting-label" data-i18n="themeLabel"></span>
+        <select id="theme-select" class="select">
+          <option value="system" data-i18n="themeSystem"></option>
+          <option value="light" data-i18n="themeLight"></option>
+          <option value="dark" data-i18n="themeDark"></option>
+        </select>
+      </label>
+
+      <!-- Output Case Selector -->
+      <label class="setting-item">
+        <span class="setting-label" data-i18n="caseLabel"></span>
+        <select id="case-select" class="select">
+          <option value="original" data-i18n="caseOriginal"></option>
+          <option value="lowercase" data-i18n="caseLowercase"></option>
+          <option value="uppercase" data-i18n="caseUppercase"></option>
+        </select>
+      </label>
+
+      <!-- Blacklist Toggle -->
+      <div class="setting-item" id="blacklist-setting" style="display: none; margin-top: 14px;">
+        <div class="setting-label-group">
+          <span class="setting-label" data-i18n="blacklistToggleLabel"></span>
+          <div id="current-domain-text" class="domain-text" style="display: none;"></div>
+        </div>
+        <label class="toggle-switch">
+          <input type="checkbox" id="blacklist-toggle" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="divider mt-2">
+        <span data-i18n="blacklistTitle" style="color: var(--md-sys-color-primary); font-weight: var(--md-sys-typescale-label-large-weight);"></span>
+      </div>
+
+      <!-- Blacklist Editable List -->
+      <div id="blacklist-container" class="blacklist-container">
+        <!-- JS will populate items here -->
+        <p class="empty-hint" data-i18n="optionsBlacklistEmpty"></p>
+      </div>
+
+      <!-- Add New Domain -->
+      <div class="add-domain-wrapper">
+        <input type="text" id="new-domain" class="input-small" data-i18n-placeholder="optionsAddPlaceholder" />
+        <button id="btn-add-domain" class="btn-small btn-primary" data-i18n="btnAdd"></button>
+      </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+      <span id="app-version">CaptchaX v1.0.2</span>
+      <span>·</span>
+      <span data-i18n="footerSlogan"></span>
+    </footer>
+  </div>
+
+  <script src="popup.js" type="module"></script>
+</body>
+</html>
